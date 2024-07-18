@@ -1,0 +1,83 @@
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 620px) {
+    .container {
+        margin: 0;
+    }
+
+    @mixin size_menu_icon {
+        @include size(20px, 20px);
+    }
+
+    .menu {
+        &__block {
+            margin-top: 20px;
+        }
+
+    }
+
+    .menu_mobile::after {
+        content: '';
+        display: block;
+        @include size_menu_icon();
+        background-image: url('/public/images/menu.svg');
+    }
+
+    .search::after {
+        content: '';
+        display: block;
+        @include size_menu_icon();
+        background-image: url('/public/images/search.svg');
+    }
+
+    .like::after {
+        content: '';
+        display: block;
+        @include size_menu_icon();
+        background-image: url('/public/images/get.svg');
+    }
+
+    .shop::after {
+        content: '';
+        display: block;
+        @include size_menu_icon();
+        background-image: url('/public/images/shop.svg');
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+
+        &_link {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        &_link:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .logo {
+        flex: 8;
+        display: flex;
+        justify-content: center;
+    }
+
+    .search {
+        order: -1;
+    }
+
+    .menu_mobile {
+        order: -2;
+    }
+}
