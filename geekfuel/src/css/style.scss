@@ -1,1 +1,147 @@
-@use 'extent.scss';
+@use 'extent';
+
+:root {
+    --black: #0D0D0D;
+    --red: #FF5050;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.header__block {
+    .container {
+        margin: 0 auto;
+    }
+}
+
+
+.menu_mobile::after {
+    content: '';
+    display: block;
+    @include extent.size_menu_icon();
+    background-image: url('/public/images/menu.svg');
+}
+
+.search::after {
+    content: '';
+    display: block;
+    @include extent.size_menu_icon();
+    background-image: url('/public/images/search.svg');
+}
+
+.like::after {
+    content: '';
+    display: block;
+    @include extent.size_menu_icon();
+    background-image: url('/public/images/get.svg');
+}
+
+.shop::after {
+    content: '';
+    display: block;
+    @include extent.size_menu_icon();
+    background-image: url('/public/images/shop.svg');
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+
+    &_link {
+        flex-grow: 0.04;
+        margin-right: 20px;
+    }
+
+    &_link:last-child {
+        margin-right: 0;
+    }
+}
+
+.logo {
+    flex-grow: 0.55;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 0.16;
+
+    &__link {
+        margin-right: 20px;
+    }
+
+    &_mobile::after {
+        display: none;
+    }
+}
+
+/*PROMO*/
+
+.promo {
+    background-color: extent.$red;
+    color: extent.$white;
+
+    &__container {
+        overflow: hidden;
+        width: 80%;
+        padding: 100px 0px;
+        margin: 0 0 0 auto;
+    }
+
+    &__block {
+        display: flex;
+    }
+
+    &__header {
+        max-width: 380px;
+    }
+
+    &__header_title {
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 91%;
+    }
+
+    &__header_text {
+        margin-bottom: 50px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    &__header_btn {
+        background-color: extent.$white;
+        color: extent.$black;
+        padding: 20px 45px;
+        font-size: 16px;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+
+    &__photo {
+        background-image: url('/public/images/snow.svg');
+    }
+}

@@ -1,0 +1,130 @@
+@use 'extent';
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@media screen and (max-width: 1365px) {
+    .promo__img {
+        width: 700px;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .promo__img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        font-size: 12px;
+    }
+
+    .menu_link {
+        margin-right: 10px;
+    }
+
+    .promo {
+        &__img {
+            display: block;
+            max-width: 100%;
+        }
+
+        &__block {
+            flex-direction: column;
+        }
+
+        &__container {
+            margin: 0 auto;
+        }
+
+        &__header {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    @mixin size_menu_icon {
+        @include size(20px, 20px);
+    }
+
+    .menu {
+        &__block {
+            margin-top: 20px;
+        }
+
+    }
+
+    .menu_mobile {
+        display: none;
+    }
+
+    .header {
+        margin: 20px;
+
+        &_link {
+            flex: 0.1;
+            margin-right: 10px;
+        }
+
+        &_link:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .logo {
+        flex-grow: 0.6;
+    }
+
+    .search {
+        order: -1;
+    }
+
+    .menu_mobile {
+        order: -2;
+    }
+
+    /* PROMO */
+
+    .promo {
+        &__container {
+            width: 80%;
+            padding-top: 50px;
+            margin: 0 auto;
+        }
+
+        &__header {
+            max-width: 335px;
+            text-align: center;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__header_title {
+            margin-bottom: 20px;
+            font-size: 60px;
+        }
+
+        &__header_text {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 150%;
+        }
+
+        &__header_btn {
+            align-self: center;
+            padding: 15px 35px;
+        }
+
+        &__photo {
+            width: 440px;
+            overflow: hidden;
+        }
+    }
+}

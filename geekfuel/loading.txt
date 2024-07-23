@@ -1,1 +1,3 @@
 npx webpack build
+npm run build
+npm run start
