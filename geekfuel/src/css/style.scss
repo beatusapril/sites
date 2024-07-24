@@ -1,10 +1,5 @@
 @use 'extent';
 
-:root {
-    --black: #0D0D0D;
-    --red: #FF5050;
-}
-
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.ttf');
@@ -14,7 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    color: var(--black);
+    color: extent.$black;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -143,5 +138,43 @@ body {
 
     &__photo {
         background-image: url('/public/images/snow.svg');
+    }
+}
+
+
+/* OFFER */
+.offer {
+    &__container {
+        width: 65%;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__header {
+        font-size: 36px;
+        max-width: 420px;
+        margin-right: 10px;
+    }
+
+    &__header_color {
+        color: extent.$red;
+    }
+
+    &__conditions {
+        opacity: 0.6;
+        max-width: 600px;
+    }
+
+    &__conditions_condition {
+        display: block;
+        margin-bottom: 20px;
+        background: url('/public/images/tick.svg') no-repeat 20px;
+        background-position: 0 0;
+        padding-left: 36px;
     }
 }

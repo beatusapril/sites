@@ -10,6 +10,12 @@
         width: 700px;
         max-width: none;
     }
+
+    .offer {
+        &__container {
+            width: 80%;
+        }
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -43,6 +49,12 @@
 
         &__header {
             margin-bottom: 20px;
+        }
+    }
+
+    .offer {
+        &__block {
+            flex-direction: column;
         }
     }
 }
@@ -125,6 +137,22 @@
         &__photo {
             width: 440px;
             overflow: hidden;
+        }
+    }
+
+    /* OFFER */
+    .offer {
+
+        &__container {
+            padding: 70px 20px;
+        }
+
+        &__header {
+            margin-bottom: 30px;
+        }
+
+        &__conditions_condition {
+            margin-bottom: 14px;
         }
     }
 }
