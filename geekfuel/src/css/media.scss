@@ -57,6 +57,7 @@
             flex-direction: column;
         }
     }
+
 }
 
 @media screen and (max-width: 720px) {
@@ -153,6 +154,44 @@
 
         &__conditions_condition {
             margin-bottom: 14px;
+        }
+    }
+
+    /*BOX*/
+
+    .box {
+        &__container {
+            margin: 10px 20px 0px 20px;
+            padding: 60px 0;
+        }
+
+        &__block {
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        &__clauses,
+        &__header {
+            align-self: center;
+        }
+
+        &__header {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        &__header {
+            width: 70%;
+        }
+
+        &__clauses {
+            margin-bottom: 50px;
+        }
+
+        &__gallery {
+            max-width: 100%;
+            object-fit: contain;
         }
     }
 }

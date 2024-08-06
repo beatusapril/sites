@@ -178,3 +178,75 @@ body {
         padding-left: 36px;
     }
 }
+
+/*BOX*/
+
+.box {
+    &__container {
+        background-color: extent.$pink;
+        padding: 75px 5px
+    }
+
+    &__block {
+        display: flex;
+        justify-content: center;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    &__header {
+        display: block;
+        text-transform: uppercase;
+        font-size: 36px;
+    }
+
+    &__left {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__clauses {
+        width: 80%;
+    }
+
+    &__clauses,
+    &__header {
+        align-self: flex-start;
+    }
+
+    &__clause {
+        display: block;
+        margin-bottom: 20px;
+        background-position: 0 0;
+        padding-left: 40px;
+    }
+
+    &__clause:nth-child(4n+1) {
+        background: url('/public/images/greenpoint.svg') no-repeat 5px;
+    }
+
+    &__clause:nth-child(4n+2) {
+        background: url('/public/images/orangepoint.svg') no-repeat 5px;
+    }
+
+    &__clause:nth-child(4n+3) {
+        background: url('/public/images/bluepoint.svg') no-repeat 5px;
+    }
+
+    &__clause:nth-child(4n+4) {
+        background: url('/public/images/pinkpoint.svg') no-repeat 5px;
+    }
+
+    &__gallery {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+}
