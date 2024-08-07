@@ -66,6 +66,10 @@
         @include size(20px, 20px);
     }
 
+    .container {
+        max-width: 90%;
+    }
+
     .menu {
         &__block {
             margin-top: 20px;
@@ -192,6 +196,37 @@
         &__gallery {
             max-width: 100%;
             object-fit: contain;
+        }
+    }
+
+    /*PLUS*/
+    .plus {
+        &__container {
+            margin-top: 70px;
+            padding: 70px 20px 30px 20px;
+        }
+
+        &__header {
+            margin-bottom: 40px;
+        }
+
+        &__gallery {
+            flex-direction: column;
+        }
+
+        &__card {
+            margin-bottom: 30px;
+        }
+    }
+
+    .plus__card {
+        .view {
+            margin-bottom: 20px;
+        }
+
+        .view__text {
+            padding: 20px 0 25px 0;
+            font-size: 22px;
         }
     }
 }

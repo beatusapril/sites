@@ -1,5 +1,7 @@
 @use 'extent';
 
+$headerSecond: 36px;
+
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.ttf');
@@ -184,7 +186,7 @@ body {
 .box {
     &__container {
         background-color: extent.$pink;
-        padding: 75px 5px
+        padding: 75px 5px;
     }
 
     &__block {
@@ -249,4 +251,70 @@ body {
         object-fit: contain;
     }
 
+}
+
+/*PLUS*/
+.plus {
+    &__container {
+        background-color: extent.$greyLight;
+        margin-top: 100px;
+        padding: 100px 10px;
+    }
+
+    &__block {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    &__header {
+        text-align: center;
+        font-size: $headerSecond;
+        text-transform: uppercase;
+    }
+
+    &__gallery {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.plus__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-right: 20px;
+
+    .view {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        background-color: extent.$white;
+        margin-bottom: 40px;
+    }
+
+    .view__img {
+        display: block;
+        @include extent.img_responsive();
+    }
+
+    .view__text {
+        text-transform: uppercase;
+        padding: 20px 0 20px 0;
+        font-size: 25px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    &__text {
+        opacity: 0.6;
+        display: block;
+        margin-bottom: 0;
+        margin-top: auto;
+    }
+
+    &:last-child{
+        margin-right: 0;
+    }
 }

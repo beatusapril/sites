@@ -2,6 +2,7 @@ $red : #FF5050;
 $white: #FFFFFF;
 $black: #0D0D0D;
 $pink: #FFF6F6;
+$greyLight: #F8F8F8;
 
 @mixin size($width, $height) {
     width: $width;
@@ -10,6 +11,11 @@ $pink: #FFF6F6;
 
 @mixin size_menu_icon {
     @include size(20px, 20px);
+}
+
+@mixin img_responsive {
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .btn {
