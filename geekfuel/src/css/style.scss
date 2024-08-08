@@ -4,12 +4,19 @@ $headerSecond: 36px;
 
 @font-face {
     font-family: 'Roboto';
+    font-weight: 400;
     src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 600;
+    src: url('../fonts/Roboto-Medium.ttf');
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 400;
     color: extent.$black;
     box-sizing: border-box;
@@ -17,8 +24,29 @@ body {
 }
 
 .container {
+    max-width: 1220px;
+    width: 70%;
+    &-pr{
+        max-width: 90%;
+    }
+}
+
+.header-2 {
+    text-transform: uppercase;
+    font-size: 2.4em;
+}
+
+.text-st {
+    opacity: 0.6;
+}
+
+.center{
     margin: 0 auto;
-    max-width: 80%;
+}
+
+.block-st {
+    width: 85%;
+    margin: 0 auto;
 }
 
 .header__block {
@@ -32,28 +60,28 @@ body {
     content: '';
     display: block;
     @include extent.size_menu_icon();
-    background-image: url('/public/images/menu.svg');
+    background-image: url("#{extent.$imgPath}menu.svg");
 }
 
 .search::after {
     content: '';
     display: block;
     @include extent.size_menu_icon();
-    background-image: url('/public/images/search.svg');
+    background-image: url('#{extent.$imgPath}search.svg');
 }
 
 .like::after {
     content: '';
     display: block;
     @include extent.size_menu_icon();
-    background-image: url('/public/images/get.svg');
+    background-image: url('#{extent.$imgPath}get.svg');
 }
 
 .shop::after {
     content: '';
     display: block;
     @include extent.size_menu_icon();
-    background-image: url('/public/images/shop.svg');
+    background-image: url('#{extent.$imgPath}shop.svg');
 }
 
 .header {
@@ -139,7 +167,7 @@ body {
     }
 
     &__photo {
-        background-image: url('/public/images/snow.svg');
+        background-image: url('#{extent.$imgPath}snow.svg');
     }
 }
 
@@ -175,7 +203,7 @@ body {
     &__conditions_condition {
         display: block;
         margin-bottom: 20px;
-        background: url('/public/images/tick.svg') no-repeat 20px;
+        background: url('#{extent.$imgPath}tick.svg') no-repeat 20px;
         background-position: 0 0;
         padding-left: 36px;
     }
@@ -192,7 +220,7 @@ body {
     &__block {
         display: flex;
         justify-content: center;
-        width: 85%;
+        /*width: 85%;*/
         margin: 0 auto;
     }
 
@@ -231,19 +259,19 @@ body {
     }
 
     &__clause:nth-child(4n+1) {
-        background: url('/public/images/greenpoint.svg') no-repeat 5px;
+        background: url('#{extent.$imgPath}greenpoint.svg') no-repeat 5px;
     }
 
     &__clause:nth-child(4n+2) {
-        background: url('/public/images/orangepoint.svg') no-repeat 5px;
+        background: url('#{extent.$imgPath}orangepoint.svg') no-repeat 5px;
     }
 
     &__clause:nth-child(4n+3) {
-        background: url('/public/images/bluepoint.svg') no-repeat 5px;
+        background: url('#{extent.$imgPath}bluepoint.svg') no-repeat 5px;
     }
 
     &__clause:nth-child(4n+4) {
-        background: url('/public/images/pinkpoint.svg') no-repeat 5px;
+        background: url('#{extent.$imgPath}pinkpoint.svg') no-repeat 5px;
     }
 
     &__gallery {
@@ -262,7 +290,7 @@ body {
     }
 
     &__block {
-        width: 85%;
+        /*width: 85%;*/
         margin: 0 auto;
     }
 
@@ -314,7 +342,66 @@ body {
         margin-top: auto;
     }
 
-    &:last-child{
+    &:last-child {
         margin-right: 0;
+    }
+}
+
+
+/* GOOD FOR */
+.goodFor {
+    &__container {
+        padding: 100px 10px;
+    }
+
+    &__header__text_strong {
+        font-size: 0.8em;
+        color: extent.$red;
+        display: block;
+    }
+
+    &__header {
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: flex;
+        background-color: extent.$pink;
+        justify-content: space-between;
+        padding: 80px 65px;
+
+    }
+
+    &__text {
+        max-width: 350px;
+        margin-bottom: 80px;
+    }
+
+    &__point {
+        flex: 1;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    $paddingIcon: 12px;
+    $sizeIcon: 24px;
+
+    &__point_img_one::before {
+        @include extent.pseudo_elem('#{extent.$imgPath}delivery-truck.svg', $paddingIcon, $sizeIcon);
+    }
+
+    &__point_img_two::before {
+        @include extent.pseudo_elem('#{extent.$imgPath}medal.svg', $paddingIcon, $sizeIcon);
+    }
+
+    &__point_img_third::before {
+        @include extent.pseudo_elem('#{extent.$imgPath}package.svg', $paddingIcon, $sizeIcon);
+    }
+
+    &__point_img_four::before {
+        @include extent.pseudo_elem('#{extent.$imgPath}package.svg', $paddingIcon, $sizeIcon);
     }
 }

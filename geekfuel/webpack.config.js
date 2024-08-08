@@ -64,10 +64,14 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg)$/i,
                 type: 'asset/resource',
+            },
+            {
+                test: /\.(ttf)$/i,
+                type: 'asset/resource',
             }
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.scss', '.css', '.html', '.jpg', '.svg']
+        extensions: ['.js', '.jsx', '.scss', '.css', '.html', '.jpg', '.svg', '.ttf']
     }
 };

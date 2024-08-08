@@ -19,6 +19,11 @@
 }
 
 @media screen and (max-width: 1000px) {
+
+    .container {
+         max-width: 80%;
+     }
+     
     .promo__img {
         display: none;
     }
@@ -68,6 +73,10 @@
 
     .container {
         max-width: 90%;
+    }
+
+    .block-st {
+        width: 90%;
     }
 
     .menu {
@@ -227,6 +236,41 @@
         .view__text {
             padding: 20px 0 25px 0;
             font-size: 22px;
+        }
+    }
+
+    /*GOOD FOR */
+    .goodFor {
+        &__container {
+            padding: 70px 10px;
+        }
+
+        &__block {}
+
+        &__header__text_strong {
+            margin-bottom: 20px;
+        }
+
+        &__header {
+            margin-bottom: 30px;
+        }
+
+        &__text {
+            max-width: 300px;
+            margin-bottom: 80px;
+        }
+
+        &__list {
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        &__point {
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
