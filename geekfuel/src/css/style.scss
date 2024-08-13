@@ -26,7 +26,8 @@ body {
 .container {
     max-width: 1220px;
     width: 70%;
-    &-pr{
+
+    &-pr {
         max-width: 90%;
     }
 }
@@ -40,7 +41,15 @@ body {
     opacity: 0.6;
 }
 
-.center{
+.text_bold {
+    font-weight: 600;
+}
+
+.text_upper {
+    text-transform: uppercase;
+}
+
+.center {
     margin: 0 auto;
 }
 
@@ -155,13 +164,6 @@ body {
         line-height: 26px;
     }
 
-    &__header_btn {
-        background-color: extent.$white;
-        color: extent.$black;
-        padding: 20px 45px;
-        font-size: 16px;
-    }
-
     &__img {
         max-width: 100%;
     }
@@ -220,14 +222,10 @@ body {
     &__block {
         display: flex;
         justify-content: center;
-        /*width: 85%;*/
-        margin: 0 auto;
     }
 
     &__header {
         display: block;
-        text-transform: uppercase;
-        font-size: 36px;
     }
 
     &__left {
@@ -289,15 +287,8 @@ body {
         padding: 100px 10px;
     }
 
-    &__block {
-        /*width: 85%;*/
-        margin: 0 auto;
-    }
-
     &__header {
         text-align: center;
-        font-size: $headerSecond;
-        text-transform: uppercase;
     }
 
     &__gallery {
@@ -403,5 +394,132 @@ body {
 
     &__point_img_four::before {
         @include extent.pseudo_elem('#{extent.$imgPath}package.svg', $paddingIcon, $sizeIcon);
+    }
+}
+
+/* SUBSCRIBE */
+
+.subscribe {
+    font-size: 1.2em;
+
+    &__container {
+        background-color: extent.$greyLight;
+    }
+
+    &__block,
+    &__gallery {
+        background-color: inherit;
+    }
+
+    &__block {
+        padding: 100px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__header,
+    &__text,
+    &__text_bottom {
+        display: block;
+        align-self: center;
+        text-align: center;
+    }
+
+    &__text {
+        margin-bottom: 80px;
+    }
+
+    &__gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 70px 20px;
+    }
+
+    &__text_bottom-m {
+        margin-top: 60px;
+    }
+}
+
+.subscribe__card {
+    background-color: extent.$white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &_p {
+        padding: 20px 20px 0 20px;
+    }
+
+    .plan {
+        display: block;
+    }
+
+    &_btn {
+        translate: 0 50%;
+        align-self: center;
+    }
+
+    .price_valute {
+        font-size: 1.5em;
+    }
+
+    .price_value {
+        font-size: 2.2em;
+    }
+
+    .price_interval {
+        @include extent.textOp()
+    }
+
+    .card__good {
+        object-fit: contain;
+        max-width: 100%;
+    }
+
+}
+
+.benefits {
+    &-m {
+        margin-top: 20px;
+    }
+
+    &_head {
+        margin-bottom: 10px;
+    }
+
+    &_link {
+        display: block;
+    }
+
+    &_link-m {
+        margin-bottom: 8px;
+    }
+
+    &_link-none {
+        @include extent.textOp();
+    }
+
+    &_link-none,
+    &_link-ok {
+        background-position: 0 0;
+    }
+
+    &_link-none::before,
+    &_link-ok::before {
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+        background-image: url('#{extent.$imgPath}get.svg');
+    }
+
+    &_link-none::before {
+        background-image: url('#{extent.$imgPath}none.svg');
+    }
+
+    &_link-ok::before {
+        background-image: url('#{extent.$imgPath}checked.svg');
     }
 }

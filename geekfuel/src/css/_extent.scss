@@ -23,10 +23,26 @@ $imgPath: '/public/images/';
 .btn {
     display: block;
     text-transform: uppercase;
+    padding: 20px 45px;
+    font-size: 16px;
+}
+
+.btn_red{
+    background-color: $red;
+    color: $white;
+}
+
+.btn_white{
+    background-color: $white;
+    color: $black;
 }
 
 @mixin pseudo_elem($url, $paddingBottom, $size){
     display: block;
     content: url($url);
     padding-bottom: $paddingBottom;
+}
+
+@mixin textOp {
+    opacity: 0.6;
 }
