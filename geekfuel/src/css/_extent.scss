@@ -6,6 +6,9 @@ $greyLight: #F8F8F8;
 
 $imgPath: '/public/images/';
 
+$footerBlockSize: 6n;
+$footerSzIc: 10px;
+
 @mixin size($width, $height) {
     width: $width;
     height: $height;
@@ -37,12 +40,21 @@ $imgPath: '/public/images/';
     color: $black;
 }
 
-@mixin pseudo_elem($url, $paddingBottom, $size){
+@mixin pseudo_elem_sh($url, $size) {
     display: block;
     content: url($url);
+}
+
+@mixin pseudo_elem($url, $paddingBottom, $size){
+    @include pseudo_elem_sh($url, $size);
     padding-bottom: $paddingBottom;
 }
 
 @mixin textOp {
     opacity: 0.6;
+}
+
+@mixin grid_nmb($start, $end)  {
+    grid-column-start: $start;
+    grid-column-end: $end;
 }

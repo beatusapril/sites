@@ -37,6 +37,23 @@
             margin-bottom: 50px;
         }
     }
+
+    .footer {
+
+        &__menu,
+        &__email {
+            @include extent.grid_nmb(2, 4);
+        }
+
+        .email_label,
+        .email {
+            margin-bottom: 20px;
+        }
+
+        .email {
+            max-width: 300px;
+        }
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -70,6 +87,13 @@
     .offer {
         &__block {
             flex-direction: column;
+        }
+    }
+
+    .footer {
+        &__sticy {
+            flex-direction: column;
+            justify-content: center;
         }
     }
 
@@ -319,6 +343,34 @@
 
         &_link-m {
             margin-bottom: 5px;
+        }
+    }
+
+    .footer {
+        &__container {
+           grid-template-columns: 1fr;
+            padding: 70px 10px;
+        }
+
+        .email_label,
+        .email {
+            margin-bottom: 10px;
+        }
+
+        &__email, &__menu {
+            @include extent.grid_nmb(auto, auto);
+        }
+
+        &__logo, &__menu, &__email {
+            justify-self: center;
+        }
+    }
+
+    .sticy {
+        justify-content: center;
+
+        &_copyright {
+            margin-bottom: 10px;
         }
     }
 }

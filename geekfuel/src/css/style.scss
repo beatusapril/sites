@@ -37,7 +37,8 @@ body {
     font-size: 2.4em;
 }
 
-.text-st {
+.text-st,
+.ops {
     opacity: 0.6;
 }
 
@@ -47,6 +48,10 @@ body {
 
 .text_upper {
     text-transform: uppercase;
+}
+
+.text-hint {
+    display: none;
 }
 
 .center {
@@ -521,5 +526,116 @@ body {
 
     &_link-ok::before {
         background-image: url('#{extent.$imgPath}checked.svg');
+    }
+}
+
+.footer {
+    background-color: extent.$black;
+    color: extent.$white;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 100px 10px;
+        gap: 30px 40px;
+    }
+
+    &_line {
+        height: 3px;
+        width: 100%;
+    }
+
+    &__email {
+        display: flex;
+        justify-content: center;
+        max-width: 250px;
+        flex-direction: column;
+    }
+
+    .email_label,
+    .email {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .email {
+        width: 100%;
+        padding: 10px 5px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px extent.$white solid;
+        background: extent.$black;
+        color: extent.$white;
+    }
+
+    &::placeholder {
+        opacity: 0.6;
+    }
+
+    &__logo {
+        display: block;
+    }
+
+    .logo_img {
+        background-color: white;
+    }
+}
+
+.footer__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &_link {
+        display: block;
+    }
+
+    &_fb::before {
+        @include extent.pseudo_elem_sh('#{extent.$imgPath}fb.svg', extent.$footerSzIc);
+    }
+
+    &_in::before {
+        @include extent.pseudo_elem_sh('#{extent.$imgPath}fb.svg', extent.$footerSzIc);
+    }
+
+    &_ln::before {
+        @include extent.pseudo_elem_sh('#{extent.$imgPath}fb.svg', extent.$footerSzIc);
+    }
+
+    &_tw::before {
+        @include extent.pseudo_elem_sh('#{extent.$imgPath}fb.svg', extent.$footerSzIc);
+    }
+
+    &_yt::before {
+        @include extent.pseudo_elem_sh('#{extent.$imgPath}fb.svg', extent.$footerSzIc);
+    }
+
+    &-p {
+        padding: 5px;
+    }
+}
+
+.sticy {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+
+    &_copyright {
+        margin-right: 10px;
+    }
+
+    &_copyright,
+    &_privacy {
+        font-size: 10px;
+        display: block;
     }
 }
